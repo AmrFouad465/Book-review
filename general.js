@@ -30,8 +30,7 @@ const signIn=function (firstName,lastName,email,password,callBackFunction){
 
 const logOut=function (callBackFunction){
     async function Process() {
-        let data={"firstName":firstName,"lastName":lastName,"email":email, "password":password};
-        let response =await axios.post("http://localhost:8080/auth/logout",data);
+        let response =await axios.post("http://localhost:8080/auth/logout");
         let statusCode=response.status;
         if(statusCode=== 200){
             callBackFunction(null);
