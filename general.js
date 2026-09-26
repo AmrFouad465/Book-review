@@ -106,4 +106,42 @@ const  getBookReviews= function (ISBN,callBackFunction){
     }
     Process();
 }
-module.exports={logIn,signIn,logOut,getAll,getBookByISBN,getBookByAuthor,getBookByTitle,getBookReviews};
+getAll((err, b) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(b);
+});
+
+getBookByISBN(1, (err, b) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(b);
+});
+
+getBookByAuthor("Agatha Christie", (err, b) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(b);
+});
+
+getBookByTitle("Fairy tales", (err, b) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(b);
+});
+
+getBookReviews(1, (err, b) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(b);
+});
